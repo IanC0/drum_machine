@@ -1,6 +1,5 @@
 const drumPad = document.getElementsByClassName("drumPad");
 
-
 const boom = document.getElementById("boom");
 const clap = document.getElementById("clap");
 const hihat = document.getElementById("hihat");
@@ -12,18 +11,24 @@ const tink = document.getElementById("tink");
 const tom = document.getElementById("tom");
 
 
-const drumMachine = function(drumSound,buttonLight) {
+const drumMachine = function(drumSound, drumLight) {
     let audio = new Audio();
     audio.src = `sounds/${drumSound}.wav`;
     audio.play();
-    buttonLight.style.border = "solid red";
+    drumLight.style.border = "solid red";
 }
 
-
-[boom, clap, hihat].forEach((element)=>{
-    element.addEventListner('click', (e)=>{
-      console.log(e.target.id);
+let arr = [...drumPad]
+arr.forEach((element)=>{
+   element.addEventListener("mousedown", ()=> {
+    drumMachine(element.id, element)
    });
+   element.addEventListener("mouseup", ()=> {
+    element.style.border = "solid black";
+    });
+    element.addEventListener("mouseleave", ()=> {
+    element.style.border = "solid black";
+    });
 });
 
 
