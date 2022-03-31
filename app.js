@@ -29,7 +29,44 @@ arr.forEach((element)=>{
     element.addEventListener("mouseleave", ()=> {
     element.style.border = "solid black";
     });
+    document.addEventListener("keyup", () => {
+        element.style.border = "solid black";
+    }); 
 });
+
+document.addEventListener("keydown", (e) => {
+    switch(e.code) {
+        case "KeyA":
+            drumMachine("boom", boom);
+            break;
+        case "KeyS":
+            drumMachine("clap", clap);
+            break;
+        case "KeyD":
+            drumMachine("hihat", hihat);
+            break;
+        case "KeyF":
+            drumMachine("kick", kick);
+            break;
+        case "KeyG":
+            drumMachine("openhat", openhat);
+            break;
+        case "KeyH":
+            drumMachine("ride", ride);
+            break;
+        case "KeyJ":
+            drumMachine("snare", snare);
+            break;
+        case "KeyK":
+            drumMachine("tink", tink);
+            break;
+        case "KeyL":
+            drumMachine("tom", tom);
+            break;
+    };
+}); 
+
+
 
 
 // boom.addEventListener("click", (e) => {

@@ -25,17 +25,22 @@ body {
     width: 90px;
 }
 .drumPad {
-    width: 15px;
-    height: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
     border: black solid;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.drum p {
+.buttonTitle {
     background-color: white;
     color: black;
     width: 65px;
     border-radius: 10px;
     text-align: center;
-    
 }
 
 
